@@ -19,7 +19,7 @@
             <select class="form form-control" id="type">
                 <option value="">Select Type</option>
                 <option value="All">Select All</option>
-                <option value="admin">Walkin</option>
+                <option value="cashier">Walkin</option>
                 <option value="user">Online Order</option>
             </select>
         </div>
