@@ -1,3 +1,7 @@
+<h1>
+    Category
+</h1>
+
 <div class="card">
     <div class="row">
         <div class="col-md-6">

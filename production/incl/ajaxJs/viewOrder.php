@@ -2,7 +2,7 @@
 
 
 function fetchCartItems() {
-    console.log(<?php echo $_GET['viewOrder'];?>)
+    
 $.ajax({
     url: 'incl/ajaxData/fetch_order.php', // Change the URL to your PHP file
     type: 'POST',
@@ -51,13 +51,11 @@ function orderDetails() {
                     orderDetailsHtml += '<label>' + item.label + ':</label>';
                     if (item.label === 'Order Status') { // Change 'Your Button Label' to the label of the value you want to turn into a button
                         console.log(item.value)
-                        if(item.value === 'Products Receive'){
+                        if(item.value === 'Products Receive' ||  item.value === 'Cancel Order'){
                             orderDetailsHtml += '<span>' + item.value + '</span>';
                         }else{
                             orderDetailsHtml += ' <button class="btn btn-sm btn-primary" id="updateStatus" >' + item.value + '</button>';
                         }
-
-                        
                     } else {
                         orderDetailsHtml += '<span>' + item.value + '</span>';
                     }
@@ -79,7 +77,7 @@ function fetchData() {
         dataType: 'json', // or other data type you expect
         success: function(response) {
             // Process the response data here
-            console.log(response);
+            // console.log(response);
         },
         error: function(xhr, status, error) {
             // Handle errors here

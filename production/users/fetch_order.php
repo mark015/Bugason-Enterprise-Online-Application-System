@@ -4,7 +4,7 @@ include('../incl/config.php');
 $userId = $_POST['userId'];
 $client_id = '1'; // Change this to the client_id you want to filter by
 $sql = "SELECT c.name, c.address, c.contact, o.total_price,o.order_id, o.order_date, o.order_status FROM `order` as o 
-inner join users as c on o.client_id=c.user_id where o.client_id='$userId' and o.order_status!='Cancel Order'";
+inner join users as c on o.client_id=c.user_id where o.client_id='$userId' and o.order_status!='Cancel Order' order by o.order_id desc";
 
 // Execute the SQL statement
 $result = $conn->query($sql);

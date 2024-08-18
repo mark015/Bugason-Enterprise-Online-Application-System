@@ -12,7 +12,7 @@ if(isset($_POST['order_id']) && !empty($_POST['order_id'])) {
     if($status === 'Pending'){
         $sql = "UPDATE `order` SET `order_status` = 'Preparing Order' WHERE `order_id` = '$order_id'";
     }else if($status === 'Preparing Order'){
-        $sql = "UPDATE `order` SET `order_status` = 'On Delivery' WHERE `order_id` = '$order_id'";
+        $sql = "UPDATE `order` SET `order_status` = 'On Delivery', notif_status='unread' WHERE `order_id` = '$order_id'";
     }else{
         $sql = "UPDATE `order` SET `order_status` = 'Products Receive' WHERE `order_id` = '$order_id'";
     }

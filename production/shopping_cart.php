@@ -142,5 +142,7 @@ $('.cart-item:checked').each(function() {
 
 });
 </script>
-  </body>
-</html>  
+<?php
+
+include('incl/user_south.php');
+?>

@@ -145,5 +145,6 @@ include('incl/user_nav.php');?>
         });
     }
 </script>
-  </body>
-</html>  
+<?php
+include('incl/user_south.php');
+?>

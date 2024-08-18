@@ -20,13 +20,16 @@
     <link rel="stylesheet" href="vendors/swal/dist/sweetalert2.min.css">
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
+    <style>
+    </style>
   </head>
 
-  <body class="login" style="background-color:#ffffff;">
+  <body class="login" style="background-image: url('bg.jpg'); background-repeat: no-repeat; background-size: cover;">
     <div>
       <div class="login_wrapper">
         <div class="animate form login_form">
-          <section class="login_content">
+          <section class="login_content" style="max-width: 400px; margin: auto; width:450px; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h1 class="form">Bugasong Enterprise Online Ordering System</h1>
             <form id="login">
               <h1>Login</h1>
               <div>
@@ -42,16 +45,6 @@
               <p id="loginMessage" class="mt-3"></p>
               <a href="production/register" class="">Create New Account</a>
               <div class="clearfix"></div>
-
-              <div class="separator">
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <hp><i class="fa fa-file-code-o"></i> Developed By <strong>TechzQuad</strong></p>
-                  <p>©2016 All Rights Reserved. We Are The Solution</p>
-                </div>
-              </div>
             </form>
           </section>
         </div>
@@ -85,7 +78,7 @@
                             showConfirmButton: false,
                             timer: 2000 // Close the alert after 2 seconds
                                 }).then(function() {
-                                    location.href = "production/index";
+                                    location.href = "production/index?link=dashboard";
                                 });
                           }else{
                             Swal.fire({

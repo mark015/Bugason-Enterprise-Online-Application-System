@@ -1,7 +1,7 @@
 
           <div class="row col-md-12 col-sm-12" style="display: inline-block;" >
           <div class="row">
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  ">
+                      <div class="animated flipInY col-lg-4 col-md-4 col-sm-6  ">
                         <div class="tile-stats">
                           <div class="icon"><i class="fa fa-users"></i>
                           </div>
@@ -9,7 +9,7 @@
                           <h3>Users</h3>
                         </div>
                       </div>
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  ">
+                      <div class="animated flipInY col-lg-4 col-md-4 col-sm-6  ">
                         <div class="tile-stats">
                           <div class="icon"><i class="fa fa-shopping-cart"></i>
                           </div>
@@ -17,7 +17,7 @@
                           <h3>Products</h3>
                         </div>
                       </div>
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  ">
+                      <div class="animated flipInY col-lg-4 col-md-4 col-sm-6  ">
                         <div class="tile-stats">
                           <div class="icon"><i class="fa fa-shopping-bag"></i>
                           </div>

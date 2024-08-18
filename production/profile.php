@@ -187,5 +187,7 @@ $('#saveChangesBtn').click(function() {
     });
 });
 </script>
-  </body>
-</html>  
+<?php
+
+include('incl/user_south.php');
+?> 

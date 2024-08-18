@@ -3,7 +3,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-       <?php include 'incl/footer.php';?>
+
         <!-- /footer content -->
       </div>
     </div>

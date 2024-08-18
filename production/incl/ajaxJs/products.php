@@ -9,7 +9,7 @@ function fetchData() {
                 $('#inventory_table tbody').empty(); // Clear existing rows
                 $.each(data, function(index, product){
                     var row = "<tr>" +
-                        "<td>" + product.product_id + "</td>" +
+                        "<td>00" + product.product_id + "</td>" +
                         "<td>" + product.product_name + "</td>" +
                         "<td>" + product.category + "</td>" +
                         "<td>" + product.quantity_in_stock + "</td>" +

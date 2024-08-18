@@ -1,3 +1,7 @@
+<h1>
+    Products
+</h1>
+
 <div class="card">
 
     <div class="card-body">
@@ -10,7 +14,7 @@
                     <th>Quantity in Stock</th>
                     <th>Price</th>
                     <th>Image</th>
-                    <th>Image</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,7 +94,7 @@
                                 <select type="number" class="form-control" id="category" name="category">
                                     <?php
                         // Include database configuration
-                                        include('incl/config.php');
+                                        include('../config.php');
 
                                         // SQL query to select all categories
                                         $sql = "SELECT * FROM categories";
