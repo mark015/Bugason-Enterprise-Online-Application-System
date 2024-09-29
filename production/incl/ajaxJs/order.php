@@ -2,14 +2,16 @@
 function fetchDataOrder() {
     var selectedStatus = $('#orderStatus').val(); // Get the selected status
     var selectedType = $('#type').val(); // Get the selected type
-
+    var role ="<?php echo $row['role']?>"
+    console.log(role)
     $.ajax({
         url: "incl/ajaxData/OrderData.php",
         type: "GET",
         dataType: "json",
         data: { 
             status: selectedStatus,
-            type: selectedType  // Send type (could be empty or not present)
+            type: selectedType,  // Send type (could be empty or not present),
+            role: role
         },
         beforeSend: function() {
             // Show loader or spinner

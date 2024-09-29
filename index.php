@@ -80,6 +80,16 @@
                                 }).then(function() {
                                     location.href = "production/index?link=dashboard";
                                 });
+                          }else if(response.role === 'deliver' || response.role === 'preparing orders'){
+                            Swal.fire({
+                            icon: 'success',
+                            title: '',
+                            text: 'You have successfully Login.',
+                            showConfirmButton: false,
+                            timer: 2000 // Close the alert after 2 seconds
+                                }).then(function() {
+                                    location.href = "production/index?link=order";
+                                });
                           }else{
                             Swal.fire({
                             icon: 'success',

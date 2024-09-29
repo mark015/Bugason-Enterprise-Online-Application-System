@@ -44,9 +44,98 @@ function drawChart(data) {
     chart.draw(chartData, options);
 }
 
+function progressName() {
+    $.ajax({
+        url: 'incl/ajaxData/progressName.php', // PHP script to fetch client data
+        type: 'GET',
+        dataType: 'json', // Expect JSON data
+        success: function(data) {
+            console.log(data)
+            // Assuming `data` is an array of objects like [{ "name": "John Doe", "progress": 50 }, { "name": "Jane Smith", "progress": 70 }]
+            if (Array.isArray(data)) {
+                // Clear previous content
+                $('#progressContainer').empty();
+                
+                // Loop through each client and create a progress bar
+                data.forEach(function(client, index) {
+                    let nameValue = client.name;
+                    let progressValue = client.progress;
+                    
+                    // Create the HTML for the progress bar
+                    let progressHTML = `
+                        <div class="progress row mb-3">
+                            <div class="col-md-3">
+                                <span>${nameValue}</span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="progress-bar" role="progressbar" style="width: ${progressValue}%;" aria-valuenow="${progressValue}" aria-valuemin="0" aria-valuemax="100">
+                                    ${progressValue}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Append the progress bar to the container
+                    $('#progressContainer').append(progressHTML);
+                });
+            } else {
+                console.error('Invalid data format', data);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', xhr.responseText); // Log error message if AJAX fails
+        }
+    });
+}
+
+function progressProducts() {
+    $.ajax({
+        url: 'incl/ajaxData/progressProducts.php', // PHP script to fetch client data
+        type: 'GET',
+        dataType: 'json', // Expect JSON data
+        success: function(data) {
+            console.log(data)
+            
+            if (Array.isArray(data)) {
+                // Clear previous content
+                $('#ProductsPogress').empty();
+                
+                // Loop through each client and create a progress bar
+                data.forEach(function(client, index) {
+                    let nameValue = client.name;
+                    let progressValue = client.progress;
+                    
+                    // Create the HTML for the progress bar
+                    let progressHTML = `
+                        <div class=" row mb-3">
+                            <div class="col-md-3">
+                                <span>${nameValue}</span>
+                            </div>
+                            <div class="col-md-9 progress">
+                                <div class="progress-bar" role="progressbar" style="width: ${progressValue}%;" aria-valuenow="${progressValue}" aria-valuemin="0" aria-valuemax="100">
+                                    ${progressValue}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Append the progress bar to the container
+                    $('#ProductsPogress').append(progressHTML);
+                });
+            } else {
+                console.error('Invalid data format', data);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', xhr.responseText); // Log error message if AJAX fails
+        }
+    });
+}
 
 
-    $(document).ready(function() {
+$(document).ready(function() {
+    progressName()
+    progressProducts()
     // Function to fetch user count using AJAX
     function fetchUserCount() {
         $.ajax({
@@ -112,8 +201,6 @@ function drawChart(data) {
             }
         });
     }
-
-
     function fetcChartData() {
         $.ajax({
             url: 'incl/ajaxData/barChart.php', // PHP script to fetch order data
@@ -161,12 +248,9 @@ function drawChart(data) {
             }
         });
     }
-
     fetcChartData()
     // Call fetchOrderData function on page load
     fetchOrderData();
-
-
     // Call fetchUserCount function on page load
     fetchUserCount();
 });

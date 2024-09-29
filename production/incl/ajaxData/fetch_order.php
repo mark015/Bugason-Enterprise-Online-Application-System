@@ -23,7 +23,6 @@ if ($result->num_rows > 0) {
     echo json_encode($cartItems);
 } else {
     // No rows found in the database
-    echo $user_id;
 }
 
 // Close the database connection

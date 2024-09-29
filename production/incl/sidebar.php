@@ -8,10 +8,18 @@ function isActive($link, $activeLink) {
 }
 ?>
 
-<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu" >
   <div class="menu_section">
     <h3>General</h3>
     <ul class="nav side-menu">
+      <?php
+        if($row['role'] == 'deliver' || $row['role'] === 'preparing orders'){
+          ?>
+          <li class="<?= isActive('order', $activeLink); ?>"><a href="index?link=order"><i class="fa fa-shopping-cart"></i>Orders</a></li>
+          <?php
+        }else{
+      ?>
+
       <li class="<?= isActive('dashboard', $activeLink); ?>"><a href="index?link=dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
       <li class="<?= isActive('products', $activeLink); ?>"><a href="index?link=products"><i class="fa fa-cubes"></i>Products</a></li>
       <li class="<?= isActive('order', $activeLink); ?>"><a href="index?link=order"><i class="fa fa-shopping-cart"></i>Orders</a></li>
@@ -26,6 +34,7 @@ function isActive($link, $activeLink) {
           <li class="<?= isActive('anual_reports', $activeLink); ?>"><a href="index?link=anual_reports">Anual</a></li>
         </ul>
       </li>
+      <?php }?>
       <!-- Dropdown menu item -->
       <!--  -->
     </ul>

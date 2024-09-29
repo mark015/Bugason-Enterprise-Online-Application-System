@@ -5,6 +5,10 @@
 <div class="card">
 
     <div class="card-body">
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+                Add Products
+            </button>
         <table id="inventory_table" class=" table table-stripped">
             <thead>
                 <tr>
@@ -21,10 +25,7 @@
             </tbody>
         </table>
         
-        <!-- Button to trigger modal -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProductModal">
-                Add Products
-            </button>
+        
 
             <!-- Modal -->
 

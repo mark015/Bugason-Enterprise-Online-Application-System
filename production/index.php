@@ -20,7 +20,13 @@
       }else if($link === 'daily_reports' || $link === 'monthly_reports' || $link === 'anual_reports'){
         include 'incl/tables/reports.php';  
       }else{
-        include 'incl/dashboard/dashboard.php';
+        if($_GET['dash'] === 'customer'){
+          include 'incl/dashboard/customer.php';
+
+        }else{
+          include 'incl/dashboard/dashboard.php';
+
+        }
       }
     ?>
 </div>

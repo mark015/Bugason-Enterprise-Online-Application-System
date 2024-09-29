@@ -15,12 +15,12 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col" style="position: fixed;">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-            <a href="index" class="site_title">
-    <img src="images/logo.png" alt="bugasongEnterprise" class="img-fluid" style="width: 250px;">
-</a>
+              <a href="index" class="site_title">
+                <img src="images/logo.png" alt="bugasongEnterprise" class="img-fluid" style="width: 250px;">
+              </a>
             </div>
             <div class="clearfix"></div>
 

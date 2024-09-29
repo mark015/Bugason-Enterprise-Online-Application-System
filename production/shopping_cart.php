@@ -30,7 +30,7 @@ include('incl/user_nav.php');?>
                               </tr>
                             </tfoot>
                         </table>
-                        <button class="btn btn-success" id="placeOrder">Place Order</button>
+                        <div id="pOrderBtn"></div>
                     </div>
                 </div>
             </div>
@@ -129,6 +129,13 @@ $('.cart-item:checked').each(function() {
             if (response && response.totalP !== undefined) {
                 // Update the UI with the total price
                 $('#total-amount').text('₱ ' +response.totalP);
+                var totalPrice = parseFloat(response.totalP);
+                if(totalPrice < 100){
+
+                }else{
+                    $('#pOrderBtn').html('<button class="btn btn-success" id="placeOrder">Place Order</button>')
+                }
+
             } else {
                 console.error('Invalid response received from server.');
             }

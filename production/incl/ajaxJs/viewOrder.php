@@ -14,6 +14,7 @@ $.ajax({
         var cartTable = $('#order-table tbody');
         // Populate table with fetched data
         $.each(response, function(index, data) {
+            console.log(data)
             $('#order-table tbody').append('<tr>' +
                 '<td><image src="incl/incl/' + data.img + '" style="height: 80px; width: 80px; margin: 10px"></image></td>' +
                 '<td>' + data.pro + '</td>' +
@@ -42,6 +43,7 @@ function orderDetails() {
         dataType: 'json',
         success: function(response) {
             console.log(response)
+            var role = "<?php echo $row['role'];?>"
             // Process the response and update the content
             var orderDetailsHtml = '';
             response.forEach(function(order) {
@@ -55,6 +57,7 @@ function orderDetails() {
                             orderDetailsHtml += '<span>' + item.value + '</span>';
                         }else{
                             orderDetailsHtml += ' <button class="btn btn-sm btn-primary" id="updateStatus" >' + item.value + '</button>';
+                            
                         }
                     } else {
                         orderDetailsHtml += '<span>' + item.value + '</span>';
@@ -89,7 +92,7 @@ function fetchData() {
 $(document).on('click', '#updateStatus', function() {
     var btnValue = $(this).text(); 
     // console.log(btnValue)
-
+    var role = "<?php echo $row['role'];?>"
     Swal.fire({
             title: 'Are you sure?',
             text: 'You want to update!',
@@ -117,7 +120,11 @@ $(document).on('click', '#updateStatus', function() {
                             showConfirmButton: false,
                             timer: 1500
                         }).then(function() {
-                            location.reload();
+                            if(role == "preparing orders" || role == "deliver"){
+                                location.href = "index.php?link=order";
+                            }else{
+                                location.reload();
+                            }
                         });
                     },
                     error: function(xhr, status, error) {

@@ -4,7 +4,12 @@
 
 <div class="card">
     <div class="row p-3">
+    <?php if($row['role']==='deliver' || $row['role']==='preparing orders'){
+
+}else{
+    ?>
         <div class="col-md-6">
+            
             <select class="form form-control" id="orderStatus">
                 <option value="">Select Status</option>
                 <option value="All">Select All</option>
@@ -23,6 +28,7 @@
                 <option value="user">Online Order</option>
             </select>
         </div>
+        <?php } ?>
     </div>
     <div class="card-body">
         <table id="inventory_table" class=" table table-stripped">
@@ -40,8 +46,6 @@
             <tbody>
             </tbody>
         </table>
-
     </div>
-
 </div>
 
